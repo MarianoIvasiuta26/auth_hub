@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('register', [RegisterController::class, 'index'])->name('register.index');
 Route::post('register/store', [RegisterController::class, 'store'])->name('register.store');
-Route::get('user/show', [RegisterController::class, 'show'])->name('user.show');
+Route::get('user/show', [RegisterController::class, 'show'])->name('user.show')->middleware('auth');
 
 Route::get('login', [LoginController::class, 'index'])->name('login.index');
 Route::post('user/login', [LoginController::class, 'login'])->name('user.login');
